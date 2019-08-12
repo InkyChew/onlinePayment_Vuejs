@@ -40,7 +40,7 @@ export default {
     page () {
       const page = this.$route.path
       const step2 = page !== '/'
-      return step2 
+      return step2
     }
   },
   methods: {

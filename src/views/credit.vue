@@ -20,16 +20,16 @@
           label 信用卡號：
           .row
             .col-2
-              input.form-control(type='text', maxlength='4', @keyup="next($event, 'c2')")
+              input.form-control(type='text', v-model="formData.c1", maxlength='4', @keyup="next($event, 'c2')")
             label.align-self-end —
             .col-2
-              input.form-control(ref='c2', type='text', maxlength='4', @keyup="next($event, 'c3')")
+              input.form-control(ref='c2', type='text', v-model="formData.c2", maxlength='4', @keyup="next($event, 'c3')")
             label.align-self-end —
             .col-2
-              input.form-control.px-0(ref='c3', type='password', maxlength='4', @keyup="next($event, 'c4')")
+              input.form-control.px-0(ref='c3', type='password', v-model="formData.c3", maxlength='4', @keyup="next($event, 'c4')")
             label.align-self-end —
             .col-2
-              input.form-control(ref='c4', type='text', maxlength='4', placeholder='')
+              input.form-control(ref='c4', type='text', v-model="formData.c4", maxlength='4', placeholder='')
             .col.px-0.my-auto
               img(src='@/assets/image/visa.svg')
               img(src='@/assets/image/mastercard.svg')
@@ -52,13 +52,13 @@
           label 背面末三碼：
           .row.d-flex.flex-row
             .col-3
-              input.form-control(type='text', maxlength='3', @keyup="next($event, 'email')")
+              input.form-control(type='text', v-model="formData.back3", maxlength='3', @keyup="next($event, 'email')")
             .col.my-auto.px-0
               img(src='@/assets/image/back-three.svg')
         .form-group
           .col-6.px-0
             label 付款人信箱：
-            input.form-control(type='email', ref='email', placeholder='')
+            input.form-control(type='email', ref='email', v-model='formData.email')
         .form-check
           input.form-check-input(type='checkbox')
           label.form-check-label 請再次確認「訂單資訊」與「付款資訊」，付款完成後將方送通知信至您的E-mail信箱
@@ -69,10 +69,10 @@
         :to="'/'"
       )
         button.btn.btn-primary(type='button') 回上一步
-      router-link(
-        :to="'/finish'"
-      )
-        button.btn.btn-primary(type='button') 確認付款
+      //- router-link(
+      //-   :to="'/finish'"
+      //- )
+      button.btn.btn-primary(type='button' @click='validate') 確認付款
 </template>
 
 <script>
@@ -80,8 +80,15 @@ export default {
   name: 'credit',
   data () {
     return {
-      expired: '',
-      payRule: 'once'
+      payRule: 'once',
+      formData: {
+        email: '',
+        c1: '',
+        c2: '',
+        c3: '',
+        c4: '',
+        back3: ''
+      }
     }
   },
   computed: {
@@ -96,6 +103,23 @@ export default {
       console.log(e)
       if (curLength === e.target.maxLength) {
         nextTarget.focus()
+      }
+    },
+    validate () {
+      var all = document.getElementsByClassName('form-control');
+      console.log(all)
+      for (var i = 0; i < all.length; i++) {
+        all[i].style.borderColor = 'red';
+      }
+      const { email, c1, c2, c3, c4, back3 } = this.formData
+      const emailReg = /^\w ([- .]\w )*@\w ([-.]\w )*\.\w ([-.]\w )*$/
+      
+      if ( email === '' || c1 === '' || c2 === '' || c3 === '' || c4 === '' || back3 === '') {
+        alert("欄位不得為空白，請確認後再送出，謝謝!")
+      } else {
+        if (!emailReg.test(this.formData.email)) {
+          alert("email格式不正確，請確認後再送出，謝謝!")
+        }
       }
     }
   }
@@ -117,4 +141,6 @@ img
   padding-left: 50px
   padding-right: 50px
   font-size: 14px
+.red
+  border-color: red
 </style>
