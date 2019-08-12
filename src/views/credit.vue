@@ -69,10 +69,11 @@
         :to="'/'"
       )
         button.btn.btn-primary(type='button') 回上一步
-      //- router-link(
-      //-   :to="'/finish'"
-      //- )
-      button.btn.btn-primary(type='button' @click='validate') 確認付款
+      router-link(
+        :to="'/finish'"
+      )
+        button.btn.btn-primary(type='button') 確認付款
+        //- button.btn.btn-primary(type='button' @click='validate') 確認付款
 </template>
 
 <script>
@@ -117,8 +118,10 @@ export default {
         alert("欄位不得為空白，請確認後再送出，謝謝!")
       } else {
         const emailReg = / ^ ([\w\.\-]){1,64} \@ ([\w\.\-]){1,64} $ /
-        if (!emailReg.test(this.formData.email)) {
+        if (emailReg.test(this.formData.email)) {
           alert("email格式不正確，請確認後再送出，謝謝!")
+        } else {
+          this.router.push({ path: 'finish' })
         }
       }
     }
