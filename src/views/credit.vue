@@ -112,11 +112,11 @@ export default {
         all[i].style.borderColor = 'red';
       }
       const { email, c1, c2, c3, c4, back3 } = this.formData
-      const emailReg = /^\w ([- .]\w )*@\w ([-.]\w )*\.\w ([-.]\w )*$/
       
       if ( email === '' || c1 === '' || c2 === '' || c3 === '' || c4 === '' || back3 === '') {
         alert("欄位不得為空白，請確認後再送出，謝謝!")
       } else {
+        const emailReg = /^\w ([- .]\w )*@\w ([-.]\w )*\.\w ([-.]\w )*$/
         if (!emailReg.test(this.formData.email)) {
           alert("email格式不正確，請確認後再送出，謝謝!")
         }
