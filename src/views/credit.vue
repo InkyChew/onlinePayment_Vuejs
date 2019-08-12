@@ -127,7 +127,7 @@ export default {
         } else if (month === '' || year === '') {
           all[4].style.borderColor = 'red'
           all[5].style.borderColor = 'red'
-          alert('請選擇有效月/年後再送出，謝謝!')
+          alert('請選擇「有效月/年」後再送出，謝謝!')
         } else if (checked === false) {
           const red = document.getElementsByClassName('red')
           red[0].style.color = 'red'

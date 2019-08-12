@@ -10,10 +10,10 @@
     .menu
       form
         .form-group
-          label(for='inputState') 付款銀行：
+          label 付款銀行：
           .col-6.px-0
-            select#inputState.form-control
-              option(selected='') 付款銀行
+            select(v-model="formData.bank").form-control
+              option(disabled :value="''") 付款銀行
               option(v-for="bank in banks") {{ bank }}
           .col-12.px-0
             ol
@@ -21,11 +21,11 @@
               li 持對應機構之金融卡可享免跨行轉帳手續費，若無以上金融機構發行之金融卡，可自由選擇其一金融機構進行後續交易流程
         .form-group
           .col-6.px-0
-            label(for='exampleInputEmail1') 付款人信箱：
-            input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='')
+            label 付款人信箱：
+            input.form-control(type='email')
         .form-check
-          input#exampleCheck1.form-check-input(type='checkbox')
-          label.form-check-label(for='exampleCheck1') 請再次確認「訂單資訊」與「付款資訊」，付款完成後將方送通知信至您的E-mail信箱
+          input.form-check-input(type='checkbox')
+          label.form-check-label 請再次確認「訂單資訊」與「付款資訊」，付款完成後將方送通知信至您的E-mail信箱
           label.form-text.text-muted 第三方支付金流平台服務條款
 
     .button.d-flex.justify-content-between
@@ -44,6 +44,9 @@ export default {
   name: 'credit',
   data () {
     return {
+      formData: {
+        bank: ''
+      },
       banks: [
         '臺灣銀行',
         '臺灣土地銀行',
