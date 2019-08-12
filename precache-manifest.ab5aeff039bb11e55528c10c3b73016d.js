@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "img/mastercard.e6bbdc83.svg"
   },
   {
-    "revision": "cfa1718597718f5bc9b8",
+    "revision": "b537dfe6331a7c5412d8",
     "url": "css/app.e6b46bc4.css"
   },
   {
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "img/jcb.5ba15b35.svg"
   },
   {
-    "revision": "00b7a7b324f97c6e299f",
-    "url": "js/about.f533ae52.js"
+    "revision": "ea1b7e9ea30ef2034568",
+    "url": "js/about.5053ed19.js"
   },
   {
-    "revision": "cfa1718597718f5bc9b8",
-    "url": "js/app.33adb132.js"
+    "revision": "b537dfe6331a7c5412d8",
+    "url": "js/app.74b2bcf9.js"
   },
   {
     "revision": "4d888f64be49bf0e0d31ec50c4409e33",
@@ -64,11 +64,11 @@ self.__precacheManifest = [
     "url": "img/footer-background.576d29f0.svg"
   },
   {
-    "revision": "6644f19224567fa0e90de3e55a723440",
+    "revision": "e14f359770619c7d4547a3c9e06d5eae",
     "url": "index.html"
   },
   {
-    "revision": "00b7a7b324f97c6e299f",
+    "revision": "ea1b7e9ea30ef2034568",
     "url": "css/about.86a58cba.css"
   }
 ];
