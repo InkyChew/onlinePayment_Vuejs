@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.838c78a80fd32fb4ffb010ddf34a280e.js"
+  "precache-manifest.307eae1a4b3ae21db398db930757852b.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "payment"});
