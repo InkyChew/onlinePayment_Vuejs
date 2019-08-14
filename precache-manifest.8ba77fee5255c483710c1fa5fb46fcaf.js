@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "img/mastercard.e6bbdc83.svg"
   },
   {
-    "revision": "b537dfe6331a7c5412d8",
-    "url": "css/app.e6b46bc4.css"
+    "revision": "e9e76a8af406b23fba3c",
+    "url": "css/app.ba3d712f.css"
   },
   {
     "revision": "3397756d38e4ac53bf5a",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "img/jcb.5ba15b35.svg"
   },
   {
-    "revision": "ea1b7e9ea30ef2034568",
-    "url": "js/about.5053ed19.js"
+    "revision": "7d3c5ea1125676446c0c",
+    "url": "js/about.b2f2f2ce.js"
   },
   {
-    "revision": "b537dfe6331a7c5412d8",
-    "url": "js/app.74b2bcf9.js"
+    "revision": "e9e76a8af406b23fba3c",
+    "url": "js/app.80c4e1f7.js"
   },
   {
     "revision": "4d888f64be49bf0e0d31ec50c4409e33",
@@ -64,11 +64,11 @@ self.__precacheManifest = [
     "url": "img/footer-background.576d29f0.svg"
   },
   {
-    "revision": "e14f359770619c7d4547a3c9e06d5eae",
+    "revision": "c6130784a261c77594c3d0bfd92eb2d3",
     "url": "index.html"
   },
   {
-    "revision": "ea1b7e9ea30ef2034568",
-    "url": "css/about.86a58cba.css"
+    "revision": "7d3c5ea1125676446c0c",
+    "url": "css/about.f47472f0.css"
   }
 ];
